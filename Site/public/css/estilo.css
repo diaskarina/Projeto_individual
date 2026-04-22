@@ -1,0 +1,539 @@
+@import url('https://fonts.cdnfonts.com/css/angelica-rytes');
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #4d1f01;
+}
+
+:root {
+  --tamanho-header: 80px;
+  --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-footer: 60px;
+}
+
+.container {
+  display: flex;
+  width: 80%;
+}
+
+.header {
+  height: var(--tamanho-header);
+}
+
+.header .container {
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.header a {
+  text-decoration: none;
+  color: #f1e0c6;
+  font-family: Helvetica;
+}
+
+.agora {
+  font-weight: 700;
+}
+
+.navbar {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+  color: #e3b062;
+  gap: 30px;
+}
+
+.logo img {
+  width: 100px;
+  height: auto;
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+/* BANNER */
+.banner {
+  height: var(--tamanho-banner);
+  color: white;
+  background-image: url('../assets/imgs/Violao.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.banner .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  padding-right: 55px;
+  margin-top: 80px;
+}
+
+.linha {
+  width: 50vw;
+  height: 2px;
+  margin: 20px 0;
+  background-color: white;
+  align-self: flex-end;
+}
+
+.banner .container .texto {
+  max-width: 500px;
+  text-align: right;
+  margin-right: 55px;
+  font-size: 25px;
+  color: #f1e0c6;
+
+}
+
+.banner .container p {
+  margin: 0;
+  padding: 0;
+}
+
+.banner .container .titulo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-right: 55px;
+  line-height: 0.6;
+}
+
+.banner .container .conexao {
+  font-family: 'Angelica Rytes', sans-serif;
+  font-size: 170px;
+
+}
+
+.banner .container .sertaneja {
+  font-family: "Medula One", system-ui;
+  font-size: 140px;
+}
+
+.banner .container .btn {
+  align-self: end;
+  margin-right: 110px;
+  margin-top: 20px;
+  padding: 12px 30px;
+  background-color: #f1e0c6;
+  color: #4d1f01;
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+
+
+/* ARTISTAS EM DESTAQUE */
+
+.social {
+  background-color: #4d1f01;
+  display: flex;
+  justify-content: center;
+}
+
+.social .container {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box img {
+  width: 250px;
+}
+
+.social .container .boxes {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  padding: 30px 0;
+  flex-wrap: wrap;
+}
+
+.social h4 {
+  font-family: 'Angelica Rytes', sans-serif;
+  font-size: 35px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #a65927;
+  border-radius: 25px;
+  padding: 5px;
+}
+
+.artistas {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.artistas h2 {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  font-size: 50px;
+  color: #ffd699;
+  letter-spacing: 2px;
+  text-align: center;
+  margin: 0;
+}
+
+.social button {
+  display: block;
+  margin: 20px auto;
+  padding: 12px 30px;
+  background-color: #e6c08b;
+  color: #4d1f01;
+  border: none;
+  border-radius: 25px;
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.social button:hover {
+  background-color: #ffd699;
+  transform: scale(1.05);
+}
+
+
+/* MÚSICAS */
+.lista {
+  display: flex;
+  flex-direction: column;
+}
+
+.musica {
+  background-color: #eee;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  padding-right: 20px;
+ gap : 10px
+}
+
+.musica img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 6px solid #4d1f01;
+  object-fit: cover;
+}
+
+.musica span {
+  background-color: #eee;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+.linha-fim {
+  justify-content: center;
+  display: flex;
+  margin: 20px 0;
+}
+
+.linha-meio {
+  justify-content: space-around;
+  display: flex;
+  margin: 20px 0;
+}
+
+.linha-topo {
+  justify-content: space-between;
+  display: flex;
+  margin: 20px 0;
+}
+
+
+.top-musicas {
+  width: 80%;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #a65927;
+  border-radius: 30px;
+}
+
+.top-musicas h2 {
+  font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #ffd699;
+  text-align: center;
+}
+
+
+/* FOOTER */
+
+.footer {
+  background-color: #32b9cd;
+  height: 150px;
+  color: #fff;
+  display: flex;
+  font-size: 15px;
+}
+
+.footer .container {
+  justify-content: center;
+  text-align: center;
+}
+
+.footer .container .version {
+  font-size: 12px;
+}
+
+/* LOGIN */
+
+.login {
+  height: var(--tamanho-login);
+  background-image: url('../assets/imgs/Fundo.png');
+  background-size: cover;
+}
+
+.login .container {
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.card {
+  width: 50%;
+  background-color: #a65927;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: palevioletred;
+  flex-direction: column;
+  padding: 20px 0;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 50px;
+  font-family: "Medula One", system-ui;
+  color: #f1e0c6;
+}
+
+.formulario {
+  display: flex;
+  height: 90%;
+  width: 80%;
+  justify-content: space-around;
+  flex-direction: column;
+}
+
+.formulario span {
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.formulario input {
+  border: 2px solid #32b9cd;
+  text-align: center;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.formulario select {
+  border: 2px solid #32b9cd;
+  background-color: white;
+  color: gray;
+  height: 36px;
+  text-align: center;
+  border-radius: 10px;
+  margin: 0;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  padding: 5px 0;
+}
+
+.botao {
+  cursor: pointer;
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  background-color: #ED145B;
+  width: 120px;
+  height: 30px;
+  align-self: center;
+  margin-top: 20px;
+}
+
+.loading-div {
+  width: 50px;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+#div_erros_login {
+  display: none
+}
+
+/* FORMULARIO */
+
+.alerta_erro {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.card_erro {
+  display: none;
+  background-color: #fff;
+  color: black;
+  width: 230px;
+  position: fixed;
+  border-radius: 4px;
+  border: #ED145B 3px solid;
+  padding: 10px;
+  margin-right: 10%;
+}
+
+.card_erro #mensagem_erro {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.formulario .tipo_campo {
+  font-size: 20px;
+  font-weight: 600 !important;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin-bottom: 10px;
+  border: 2px solid #32b9cd;
+  padding: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.btn {
+  font-family: "Barlow", sans-serif;
+  border: 0;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 10px 15px;
+  color: white;
+  background-color: #ED145B;
+  width: 120px;
+  align-self: center;
+  margin-top: 5px;
+}
+
+.loading-div {
+  width: 50px;
+  margin: auto;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}
+
+/* SIMULADOR */
+
+.simulador {
+  color: white;
+}
+
+.simulador .container {
+  flex-direction: column;
+  overflow: scroll;
+  height: var(--tamanho-simulador);
+}
+
+/* ALERTA */
+
+#alerta {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.mensagem-alarme {
+  background-color: white;
+  border-radius: 5px;
+  width: 300px;
+  height: 80px;
+  margin: 10px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.mensagem-alarme h3 {
+  font-size: 14px;
+  margin: 0;
+}
+
+.mensagem-alarme .informacao {
+  width: 66%;
+}
+
+.alarme-sino {
+  width: 48px;
+  height: 48px;
+  animation-name: bell;
+  animation-duration: 4s;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/1157/1157000.png');
+  background-size: cover;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bell {
+  0% {
+    transform: rotate(25deg)
+  }
+
+  25% {
+    transform: rotate(-25deg)
+  }
+
+  50% {
+    transform: rotate(25deg)
+  }
+
+  75% {
+    transform: rotate(-25deg)
+  }
+
+  100% {
+    transform: rotate(25deg)
+  }
+}
