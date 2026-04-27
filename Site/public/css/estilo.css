@@ -11,7 +11,7 @@ body {
   --tamanho-header: 80px;
   --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
-  --tamanho-login: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
+  --tamanho-login: 87vh;
   --tamanho-footer: 60px;
 }
 
@@ -33,7 +33,8 @@ body {
 .header a {
   text-decoration: none;
   color: #f1e0c6;
-  font-family: Helvetica;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
 }
 
 .agora {
@@ -113,7 +114,6 @@ body {
 .banner .container .conexao {
   font-family: 'Angelica Rytes', sans-serif;
   font-size: 170px;
-
 }
 
 .banner .container .sertaneja {
@@ -130,11 +130,109 @@ body {
   color: #4d1f01;
   text-decoration: none;
   border-radius: 25px;
-  font-size: 18px;
+  font-size: 20px;
   text-align: center;
   cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
 
+/* LINHA DO TEMPO */
+.timeline{
+  position: relative;
+  max-width: 1000px;
+  margin: 100px auto;
+}
+
+.timeline .container{
+  padding: 10px 50px;
+  position: relative;
+  width: 50%;
+   animation: movedown 1s linear forwards;
+   opacity: 0;
+}
+
+@keyframes movedown {
+  0%{
+    opacity: 1;
+    transform: translateY(-30px);
+  }
+  100%{
+   opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.timeline .text-box{
+padding: 20px 30px;
+background-color: #ffffff;
+position: relative;
+border-radius: 6px;
+font-size: 15px;
+}
+
+.timeline .text-box h2{
+  font-weight: 600;
+  font-family: "Playfair Display SC", serif;
+  font-size: 30px;
+}
+
+.timeline .text-box small{
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.timeline .left-container{
+  left: 0;
+}
+
+.timeline .right-container{
+  left: 50%;
+}
+
+.timeline::after{
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 100%;
+  background-color: #ffffff;
+  top: 0;
+  left: 50%;
+  margin-left: -3px;
+  z-index: -1;
+  animation: moveline 6s linear forwards;
+}
+
+@keyframes moveline {
+  0%{
+    height: 0;
+  }
+  100%{
+    height: 100%;
+  }
+}
+
+.left-container-arrow{
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #ffffff;
+  right: -15px;
+}
+.right-container-arrow{
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 28px;
+  z-index: 1;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid #ffffff;
+  left: -15px;
+}
 
 /* ARTISTAS EM DESTAQUE */
 
@@ -164,8 +262,9 @@ body {
 }
 
 .social h4 {
-  font-family: 'Angelica Rytes', sans-serif;
+  font-family: "Medula One", system-ui;
   font-size: 35px;
+  color: #ffffff;
 }
 
 .box {
@@ -204,13 +303,9 @@ body {
   border-radius: 25px;
   font-size: 20px;
   font-family: 'Poppins', sans-serif;
+  font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
-}
-
-.social button:hover {
-  background-color: #ffd699;
-  transform: scale(1.05);
 }
 
 
@@ -226,7 +321,7 @@ body {
   display: flex;
   align-items: center;
   padding-right: 20px;
- gap : 10px
+  gap: 10px
 }
 
 .musica img {
@@ -283,21 +378,25 @@ body {
 /* FOOTER */
 
 .footer {
-  background-color: #32b9cd;
-  height: 150px;
-  color: #fff;
+  background-color: #a65927;
+  height: var(--tamanho-footer);
   display: flex;
-  font-size: 15px;
 }
 
 .footer .container {
   justify-content: center;
+  align-items: center;
   text-align: center;
+  gap: 20px;
 }
 
-.footer .container .version {
-  font-size: 12px;
+.footer .container a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 30px;
 }
+
+
 
 /* LOGIN */
 
@@ -305,63 +404,106 @@ body {
   height: var(--tamanho-login);
   background-image: url('../assets/imgs/Fundo.png');
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .login .container {
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  flex-direction: column;
+  width: 100%;
 }
 
-.card {
-  width: 50%;
-  background-color: #a65927;
-  border-radius: 10px;
+.container h2 {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  color: palevioletred;
-  flex-direction: column;
-  padding: 20px 0;
-}
-
-.card h2 {
+  justify-content: center;
   margin: 0;
-  font-size: 50px;
+  font-size: 65px;
   font-family: "Medula One", system-ui;
   color: #f1e0c6;
+}
+
+.card{
+  width: 440px;
+  background-color: #a65927;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4d1f01;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.card-login{
+ width: 440px;
+  background-color: #a65927;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4d1f01;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.shape-cadastro {
+  border: 3px solid white;
+  width: 400px;
+  height: 440px;
+  position: absolute;
+  border-radius: 15px;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-40%, -30%);
+}
+.shape-login {
+  border: 3px solid white;
+  width: 400px;
+  height: 300px;
+  position: absolute;
+  border-radius: 15px;
+  z-index: 0;
+  top: 55%;
+  left: 50%;
+  transform: translate(-40%, -30%);
+}
+
+.imgSticke2{
+  position: absolute;
+  top: 50%;
+right: -40px; 
+  display: flex;
 }
 
 .formulario {
   display: flex;
   height: 90%;
-  width: 80%;
+  width: 70%;
   justify-content: space-around;
   flex-direction: column;
 }
 
 .formulario span {
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 800;
 }
 
 .formulario input {
-  border: 2px solid #32b9cd;
+  border: 3px solid#4d1f01;
   text-align: center;
-  border-radius: 10px;
   margin: 0;
 }
-
-.formulario select {
-  border: 2px solid #32b9cd;
-  background-color: white;
-  color: gray;
-  height: 36px;
-  text-align: center;
-  border-radius: 10px;
-  margin: 0;
+#div_mensagem{
+  background-color: #fff;
 }
-
 .campo {
   display: flex;
   flex-direction: column;
@@ -369,20 +511,26 @@ body {
   padding: 5px 0;
 }
 
+.container .imgSticker {
+  position: absolute;
+  top: 80%;
+  left: 35%;
+  display: flex;
+}
+
 .botao {
   cursor: pointer;
-  font-family: "Barlow", sans-serif;
-  border: 0;
-  border-radius: 5px;
-  font-weight: 600;
-  font-size: 18px;
-  color: #fff;
-  background-color: #ED145B;
-  width: 120px;
-  height: 30px;
   align-self: center;
   margin-top: 20px;
+  background: none;
+  border: none;
 }
+
+.botao img {
+  width: 80px;
+  height: auto;
+}
+
 
 .loading-div {
   width: 50px;
@@ -402,19 +550,21 @@ body {
 
 .alerta_erro {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+
 }
 
 .card_erro {
   display: none;
   background-color: #fff;
   color: black;
-  width: 230px;
+  width: 700px;
   position: fixed;
   border-radius: 4px;
   border: #ED145B 3px solid;
   padding: 10px;
   margin-right: 10%;
+  z-index: 9999;
 }
 
 .card_erro #mensagem_erro {

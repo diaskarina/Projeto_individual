@@ -1,0 +1,53 @@
+html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Caça-Palavra Binário</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    .grid { display: grid; grid-template-columns: repeat(5, 120px); gap: 5px; }
+    .cell { border: 1px solid #333; padding: 5px; text-align: center; font-size: 12px; }
+    #resultado { margin-top: 10px; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <h2>Caça-Palavra em Binário</h2>
+  <p>Use a tabela ASCII para decifrar os binários e descobrir a palavra escondida.</p>
+
+  <div class="grid">
+    <div class="cell">01001000</div>
+    <div class="cell">01100001</div>
+    <div class="cell">01001001</div>
+    <div class="cell">01100100</div>
+    <div class="cell">01001111</div>
+    <div class="cell">01001010</div>
+    <div class="cell">01001011</div>
+    <div class="cell">01001000</div>
+    <div class="cell">01100010</div>
+    <div class="cell">01001001</div>
+  </div>
+
+  <p>Digite a palavra que você encontrou:</p>
+  <input type="text" id="resposta" />
+  <button onclick="verificar()">Verificar</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    function verificar() {
+      const resposta = document.getElementById("resposta").value.trim().toUpperCase();
+      const correta = "HI"; // Palavra escondida
+      const resultado = document.getElementById("resultado");
+
+      if (resposta === correta) {
+        resultado.textContent = "✅ Correto! Você encontrou a palavra.";
+        resultado.style.color = "green";
+      } else {
+        resultado.textContent = "❌ Errado. Tente novamente.";
+        resultado.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
