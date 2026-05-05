@@ -12,7 +12,7 @@ body {
   --tamanho-banner: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-simulador: calc(100vh - var(--tamanho-header) - var(--tamanho-footer) - 2px);
   --tamanho-login: 87vh;
-  --tamanho-footer: 80px;
+  --tamanho-footer: 70px;
 }
 
 .container {
@@ -49,6 +49,20 @@ body {
   list-style: none;
   color: #e3b062;
   gap: 30px;
+}
+.navbar li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+/*
+.navbar .area-user{
+  margin-left: 100px;
+}
+*/
+.navbar .area-user img{
+  width: 40px;
+  height: auto;
 }
 
 .logo img {
@@ -138,6 +152,13 @@ body {
 }
 
 /* LINHA DO TEMPO */
+
+.titulo-timelime{
+  text-align: center;
+  font-size: 90px;
+  font-family: "Medula One", system-ui;
+  color: #ffd699;
+}
 .timeline{
   position: relative;
   max-width: 1000px;
@@ -156,18 +177,22 @@ padding: 20px 30px;
 background-color: #ffffff;
 position: relative;
 border-radius: 6px;
-font-size: 15px;
+font-size: 18px;
+font-family: 'Poppins', sans-serif;
+color: black;
 }
 
 .timeline .text-box h2{
   font-weight: 600;
   font-family: "Playfair Display SC", serif;
   font-size: 30px;
+  color: #4d1f01;
 }
 
 .timeline .text-box small{
   display: inline-block;
   margin-bottom: 15px;
+  font-size: 15px;
 }
 .timeline .left-container{
   right: 10%;
@@ -182,7 +207,7 @@ font-size: 15px;
   position: absolute;
   width: 6px;
   height: 100%;
-  background-color: #ffffff;
+  background-color:#ffffff;
   top: 0;
   left: 50%;
   margin-left: -3px;
@@ -228,14 +253,17 @@ font-size: 15px;
 }
 
 .box img {
-  width: 250px;
+  width: 200px;
+  height: 200px; /* 👈 define altura fixa */
+  object-fit: cover; /* 👈 ajusta sem distorcer */
 }
+
 
 .social .container .boxes {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 100%;
-  padding: 30px 0;
+  padding: 10px 0;
   flex-wrap: wrap;
 }
 
@@ -243,6 +271,8 @@ font-size: 15px;
   font-family: "Medula One", system-ui;
   font-size: 35px;
   color: #ffffff;
+  margin-top: 30px;
+    margin: 0;
 }
 
 .box {
@@ -253,6 +283,8 @@ font-size: 15px;
   background-color: #a65927;
   border-radius: 25px;
   padding: 5px;
+   width: 250px;
+  height: 300px;
 }
 
 .artistas {
@@ -286,72 +318,13 @@ font-size: 15px;
   transition: 0.3s;
 }
 
-
-/* MÚSICAS */
-.lista {
+.iframe{
   display: flex;
-  flex-direction: column;
-}
-
-.musica {
-  background-color: #eee;
-  border-radius: 50px;
-  display: flex;
-  align-items: center;
-  padding-right: 20px;
-  gap: 10px
-}
-
-.musica img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  border: 6px solid #4d1f01;
-  object-fit: cover;
-}
-
-.musica span {
-  background-color: #eee;
-  font-weight: bold;
-  margin: 0;
-}
-
-
-.linha-fim {
   justify-content: center;
-  display: flex;
-  margin: 20px 0;
+  align-items: center;
+ margin-bottom: 60px;
+ margin-top: 30px;
 }
-
-.linha-meio {
-  justify-content: space-around;
-  display: flex;
-  margin: 20px 0;
-}
-
-.linha-topo {
-  justify-content: space-between;
-  display: flex;
-  margin: 20px 0;
-}
-
-
-.top-musicas {
-  width: 80%;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #a65927;
-  border-radius: 30px;
-}
-
-.top-musicas h2 {
-  font-family: "Playfair Display SC", serif;
-  font-weight: 700;
-  font-size: 40px;
-  color: #ffd699;
-  text-align: center;
-}
-
 
 /* FOOTER */
 
@@ -359,13 +332,14 @@ font-size: 15px;
   background-color: #a65927;
   height: var(--tamanho-footer);
   padding: 40px 0;
+  font-family: 'Poppins', sans-serif;
 }
 
 .footer ul {
   margin-top: 0;
   padding: 0;
   list-style: none; /* estilo da lista*/
-  font-size: 18px;
+  font-size: 22px;
   text-align: center;
   line-height: 1.6; /* altura da linha*/
   margin-bottom: 0;
@@ -384,7 +358,7 @@ font-size: 15px;
 .footer .copyright{
   margin-top: 15px;
   text-align: center;
-  font-size: 13px;
+  font-size: 15px;
   color: #aaa;
 }
 
