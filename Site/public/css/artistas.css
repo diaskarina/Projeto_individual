@@ -1,0 +1,239 @@
+@import url('https://fonts.cdnfonts.com/css/angelica-rytes');
+
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff;
+}
+
+.container {
+    display: flex;
+    width: 80%;
+}
+
+
+:root {
+    --tamanho-header: 80px;
+    --tamanho-main: min-height: 100vh;
+    --tamanho-footer: 70px;
+}
+
+
+.header {
+    height: var(--tamanho-header);
+}
+
+.header .container {
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.header a {
+    text-decoration: none;
+    color: #4d1f01;
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+}
+
+.agora {
+    font-weight: 700;
+}
+
+.navbar {
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+    color: #4d1f01;
+    gap: 30px;
+}
+
+.navbar li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/*
+.navbar .area-user{
+  margin-left: 100px;
+}
+*/
+.navbar .area-user img {
+    width: 40px;
+    height: auto;
+}
+
+.logo img {
+    width: 100px;
+    height: auto;
+    margin-top: 30px;
+    margin-left: 20px;
+}
+
+.main {
+    height: var(--tamanho-main);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+}
+
+.main h1 {
+    text-align: center;
+    font-weight: 600;
+    font-family: "Playfair Display SC", serif;
+    font-size: 60px;
+    color: #4d1f01;
+    margin-top: -20px;
+}
+
+.main .container1 {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background-color: #efe9e6;
+    border-radius: 25px;
+    padding: 25px;
+    width: 700px;
+    height: 300px;
+}
+
+.main .container1 p {
+    text-align: right;
+    color: black;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main .container-right p {
+    text-align: left;
+    color: black;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.main .container2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #a65927;
+    border-radius: 25px;
+    width: 400px;
+    height: 360px;
+    margin-top: -60px;
+    position: relative;
+    z-index: 2;
+}
+
+.main .container2 img {
+    padding: 30px 30px 0 30px;
+    width: 250px;
+    height: auto;
+}
+
+.main .container2 h3 {
+    font-family: "Medula One", system-ui;
+    color: #ffffff;
+    margin: 0;
+    font-size: 40px;
+}
+
+.main .container3 {
+    flex-direction: row;
+    background-color: #4d1f01;
+    border-radius: 25px;
+    height: 80px;
+    width: 100%;
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.main .container3 img {
+    width: 380px;
+    height: 100px;
+    margin-top: -10px;
+    margin-left: 350px;
+}
+
+
+
+.main .container-right {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: #efe9e6;
+    border-radius: 25px;
+    padding: 25px;
+    width: 700px;
+    height: 300px;
+}
+
+.main .container-right1 {
+    flex-direction: row-reverse;
+    background-color: #4d1f01;
+    border-radius: 25px;
+    height: 80px;
+    width: 100%;
+    margin-top: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.main .container-right1 img {
+    width: 380px;
+    height: 100px;
+    margin-top: -10px;
+}
+
+
+
+
+/* FOOTER */
+
+.footer {
+    background-color: #a65927;
+    height: var(--tamanho-footer);
+    padding: 40px 0;
+    font-family: 'Poppins', sans-serif;
+    margin-top: 20px;
+}
+
+.footer ul {
+    margin-top: 0;
+    padding: 0;
+    list-style: none;
+    /* estilo da lista*/
+    font-size: 22px;
+    text-align: center;
+    line-height: 1.6;
+    /* altura da linha*/
+    margin-bottom: 0;
+}
+
+.footer ul li {
+    display: inline-block;
+    padding: 0 15px;
+}
+
+.footer ul li a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.footer .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 15px;
+    color: #aaa;
+}

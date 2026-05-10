@@ -1,0 +1,23 @@
+
+.flex-colunar {
+    display: flex;
+    flex-direction: column;
+        justify-content: center;
+    align-items: center;
+}
+
+.width-fit-content {
+    width: fit-content;
+
+}
+
+
+.border-secondary {
+    border: 3px solid var(--secondary-brand-color);
+}
+
+.conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

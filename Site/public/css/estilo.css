@@ -4,6 +4,7 @@
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   background-color: #4d1f01;
 }
 
@@ -260,9 +261,7 @@ body {
 .box img {
   width: 200px;
   height: 200px;
-  /* 👈 define altura fixa */
-  object-fit: cover;
-  /* 👈 ajusta sem distorcer */
+  object-fit: cover;/* ajusta sem distorcer */
 }
 
 
