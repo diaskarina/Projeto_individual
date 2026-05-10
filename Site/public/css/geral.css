@@ -15,7 +15,7 @@ body {
 }
 
 .dash-geral {
-    margin-left: 25%;
+    margin-left: 20%;
     margin-top: 30px;
     margin-right: 20px;
     margin-bottom: 40px;
@@ -57,9 +57,12 @@ body {
 }
 
 .hello {
-    width: 100%;
-    display: flex;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content:flex-end;
+  list-style: none;
+  color: #e3b062;
+  gap: 5px;
 }
 
 .hello h3 {
@@ -72,6 +75,10 @@ body {
     font-weight: 800;
 }
 
+.hello img{
+    width: 50px;
+}
+
 .btn-nav {
     width: 40%;
     color: white;
@@ -81,19 +88,19 @@ body {
     padding: 2% 5%;
 }
 
-.btn-nav-white {
-    width: 40%;
-    background-color: white;
-    border: 3px solid #e6005a;
-    border-radius: 5px;
+
+.btn-nav-white a{
+    color: #4d1f01;
     text-align: center;
-    padding: 2% 5%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
 }
 
-.btn-nav-white h3 {
-    color: #e6005a;
-    padding: 0;
-    margin: 0;
+.btn-nav-white img{
+    width: 30px;
 }
 
 .btn-nav h3,
@@ -113,4 +120,11 @@ body {
 
 .btn-logout img {
     width: 30px;
+}
+
+.dash-geral .container{
+    background-color: #a65927;
+    width: 700px;
+    height: 200px;
+    border-radius: 20px;
 }

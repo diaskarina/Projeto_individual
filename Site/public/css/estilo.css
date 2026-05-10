@@ -50,17 +50,19 @@ body {
   color: #e3b062;
   gap: 30px;
 }
+
 .navbar li {
   display: flex;
   align-items: center;
   gap: 10px;
 }
+
 /*
 .navbar .area-user{
   margin-left: 100px;
 }
 */
-.navbar .area-user img{
+.navbar .area-user img {
   width: 40px;
   height: auto;
 }
@@ -107,9 +109,9 @@ body {
   max-width: 500px;
   text-align: right;
   margin-right: 55px;
-  font-size: 25px;
+  font-size: 20px;
   color: #f1e0c6;
-
+  font-family: 'Poppins', sans-serif;
 }
 
 .banner .container p {
@@ -153,68 +155,70 @@ body {
 
 /* LINHA DO TEMPO */
 
-.titulo-timelime{
+.titulo-timelime {
   text-align: center;
   font-size: 90px;
   font-family: "Medula One", system-ui;
   color: #ffd699;
 }
-.timeline{
+
+.timeline {
   position: relative;
   max-width: 1000px;
   margin: 100px auto;
 }
 
-.timeline .container{
+.timeline .container {
   padding: 10px 50px;
   position: relative;
   width: 50%;
 }
 
 
-.timeline .text-box{
-padding: 20px 30px;
-background-color: #ffffff;
-position: relative;
-border-radius: 6px;
-font-size: 18px;
-font-family: 'Poppins', sans-serif;
-color: black;
+.timeline .text-box {
+  padding: 20px 30px;
+  background-color: #ffffff;
+  position: relative;
+  border-radius: 6px;
+  font-size: 18px;
+  font-family: 'Poppins', sans-serif;
+  color: black;
 }
 
-.timeline .text-box h2{
+.timeline .text-box h2 {
   font-weight: 600;
   font-family: "Playfair Display SC", serif;
   font-size: 30px;
   color: #4d1f01;
 }
 
-.timeline .text-box small{
+.timeline .text-box small {
   display: inline-block;
   margin-bottom: 15px;
   font-size: 15px;
 }
-.timeline .left-container{
+
+.timeline .left-container {
   right: 10%;
 }
 
-.timeline .right-container{
+.timeline .right-container {
   left: 50%;
 }
 
-.timeline::after{
+.timeline::after {
   content: '';
   position: absolute;
   width: 6px;
   height: 100%;
-  background-color:#ffffff;
+  background-color: #ffffff;
   top: 0;
   left: 50%;
   margin-left: -3px;
   z-index: -1;
 }
 
-.left-container-arrow{
+.left-container-arrow {
   height: 0;
   width: 0;
   position: absolute;
@@ -222,10 +226,11 @@ color: black;
   z-index: 1;
   border-top: 15px solid transparent;
   border-bottom: 15px solid transparent;
-  border-left : 15px solid #ffffff;
+  border-left: 15px solid #ffffff;
   right: -15px;
 }
-.right-container-arrow{
+
+.right-container-arrow {
   height: 0;
   width: 0;
   position: absolute;
@@ -254,8 +259,10 @@ color: black;
 
 .box img {
   width: 200px;
-  height: 200px; /* 👈 define altura fixa */
-  object-fit: cover; /* 👈 ajusta sem distorcer */
+  height: 200px;
+  /* 👈 define altura fixa */
+  object-fit: cover;
+  /* 👈 ajusta sem distorcer */
 }
 
 
@@ -272,7 +279,7 @@ color: black;
   font-size: 35px;
   color: #ffffff;
   margin-top: 30px;
-    margin: 0;
+  margin: 0;
 }
 
 .box {
@@ -283,7 +290,7 @@ color: black;
   background-color: #a65927;
   border-radius: 25px;
   padding: 5px;
-   width: 250px;
+  width: 250px;
   height: 300px;
 }
 
@@ -318,12 +325,12 @@ color: black;
   transition: 0.3s;
 }
 
-.iframe{
+.iframe {
   display: flex;
   justify-content: center;
   align-items: center;
- margin-bottom: 60px;
- margin-top: 30px;
+  margin-bottom: 60px;
+  margin-top: 30px;
 }
 
 /* FOOTER */
@@ -338,14 +345,16 @@ color: black;
 .footer ul {
   margin-top: 0;
   padding: 0;
-  list-style: none; /* estilo da lista*/
+  list-style: none;
+  /* estilo da lista*/
   font-size: 22px;
   text-align: center;
-  line-height: 1.6; /* altura da linha*/
+  line-height: 1.6;
+  /* altura da linha*/
   margin-bottom: 0;
 }
 
-.footer ul li{
+.footer ul li {
   display: inline-block;
   padding: 0 15px;
 }
@@ -355,7 +364,7 @@ color: black;
   color: #fff;
 }
 
-.footer .copyright{
+.footer .copyright {
   margin-top: 15px;
   text-align: center;
   font-size: 15px;
@@ -375,7 +384,7 @@ color: black;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-   display: flex;
+  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -398,7 +407,7 @@ color: black;
   color: #f1e0c6;
 }
 
-.card{
+.card {
   width: 440px;
   background-color: #a65927;
   border-radius: 15px;
@@ -410,8 +419,8 @@ color: black;
   z-index: 2;
 }
 
-.card-login{
- width: 440px;
+.card-login {
+  width: 440px;
   background-color: #a65927;
   border-radius: 15px;
   display: flex;
@@ -433,6 +442,7 @@ color: black;
   left: 50%;
   transform: translate(-40%, -30%);
 }
+
 .shape-login {
   border: 3px solid white;
   width: 400px;
@@ -445,10 +455,10 @@ color: black;
   transform: translate(-40%, -30%);
 }
 
-.imgSticke2{
+.imgSticke2 {
   position: absolute;
   top: 50%;
-right: -40px; 
+  right: -40px;
   display: flex;
 }
 
@@ -470,9 +480,11 @@ right: -40px;
   text-align: center;
   margin: 0;
 }
-#div_mensagem{
+
+#div_mensagem {
   background-color: #fff;
 }
+
 .campo {
   display: flex;
   flex-direction: column;
