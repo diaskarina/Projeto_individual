@@ -1,14 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conexão Sertaneja | Quiz</title>
-    <link rel="stylesheet" href="../public/css/quiz.css">
+    <link rel="stylesheet" href="css/quiz.css">
 </head>
-<body>
-    
-        <div id="jogo" class="container">
+
+<body onload="onloadEsconder()">
+    <div id="pontuacaoEJogo">
+        <div id="introducaoQuiz">
+            <p>
+                Descubra o quanto você sabe sobre o universo sertanejo!
+                Responda às perguntas e acompanhe seu desempenho completo na dashboard.
+            </p>
+
+            <button id="btnIniciarQuiz" onclick="iniciarQuiz()">
+                INICIAR QUIZ
+            </button>
+        </div>
+        <div id="msgFinal"></div>
+
+        <div id="jogo" class="width-fit-content flex-colunar border-secondary">
+
+            <div id="infoQuestao" class="padding-8">
+                <span>Questão atual: <span id="spanNumeroDaQuestaoAtual"></span> de <span id="qtdQuestoes"></span>
+                    questões.</span>
+            </div>
+
             <!-- Amarzenar a pergunta -->
             <div id="perguntaDaQuestaoAtual" class="padding-8">
                 <span id="spanQuestaoExibida" class="text-bold"></span>
@@ -35,17 +55,340 @@
                     <input type="radio" id="quartaOpcao" name="option" class="radio" value="alternativaD" />
                     <label for="quartaOpcao" class="option" id="labelOpcaoQuatro"></label>
                 </span>
+                <span>
+                    <input type="radio" id="quintaOpcao" name="option" class="radio" value="alternativaE" />
+                    <label for="quintaOpcao" class="option" id="labelOpcaoCinco"></label>
+                </span>
             </div>
 
             <div id="botoes" class="flex-colunar padding-8">
-                <button onclick="submeter()" id="btnSubmeter">Submeter resposta</button>
-                <button onclick="avancar()" id="btnProx" disabled>Avançar para próxima questão</button>
-                <!-- <button onclick="finalizar()" id="btnConcluir" disabled>Finalizar Quiz</button> -->
-                <button onclick="tentarNovamente()" id="btnTentarNovamente" disabled>Tentar novamente</button>
+                <button onclick="retornar()" id="btnRetornar"><img src="./assets/imgs/buttonVoltar.png" alt=""></button>
+                <button onclick="avancar()" id="btnAvancar"><img src="./assets/imgs/buttonAvancar.png" alt=""></button>
+                <button onclick="finalizarJogo()" id="btnConcluir" style="display:none;"><img
+                        src="./assets/imgs/buttonPlay.png" alt=""></button>
             </div>
-
         </div>
     </div>
-    
+
 </body>
+
 </html>
+<script>
+
+    const listaDeQuestoes = [
+
+        {
+            pergunta: "A partir de qual década o sertanejo foi produzido no Brasil?",
+            alternativaA: "1910",
+            alternativaB: "1930",
+            alternativaC: "2000",
+            alternativaD: "2011",
+            alternativaE: "1900",
+            alternativaCorreta: "alternativaA",
+            tema: "História"
+        },
+
+        {
+            pergunta: "Gusttavo Lima é um cantor mineiro de grande sucesso na musica sertaneja. Qual é o nome de batismo desse cantor?",
+            alternativaA: "Gusttavo Batista Lima",
+            alternativaB: "Gusttavo Ferreira Lima",
+            alternativaC: "Nivaldo Batista Lima",
+            alternativaD: "Reinaldo Batista Lima",
+            alternativaE: "Augusto Batista Lima",
+            alternativaCorreta: "alternativaC",
+            tema: "Artistas"
+        },
+
+        {
+            pergunta: "O filme 'Dois Filhos de Francisco' conta a história de qual dupla sertaneja?",
+            alternativaA: "Victor e Leo",
+            alternativaB: "Zezé di Camargo e Luciano",
+            alternativaC: "Chitãozinho e Xororó",
+            alternativaD: "Leandro e Leonardo",
+            alternativaE: "João Paulo e Daniel",
+            alternativaCorreta: "alternativaB",
+            tema: "Artistas"
+        },
+
+        {
+            pergunta: "Qual instrumento é símbolo do sertanejo raiz?",
+            alternativaA: "Bateria",
+            alternativaB: "Violão elétrico",
+            alternativaC: "Sanfona",
+            alternativaD: "Viola caipira",
+            alternativaE: "Violino",
+            alternativaCorreta: "alternativaD",
+            tema: "História"
+        },
+
+        {
+            pergunta: "Quem é conhecida como a Rainha do Sertanejo?",
+            alternativaA: "Paula Fernandes",
+            alternativaB: "Ana Castela",
+            alternativaC: "Simone Mendes",
+            alternativaD: "Marília Mendonça",
+            alternativaE: "Roberta Miranda",
+            alternativaCorreta: "alternativaE",
+            tema: "Curiosidades"
+        },
+
+        {
+            pergunta: "O sertanejo romântico ficou muito popular principalmente em qual período?",
+            alternativaA: "Anos 60",
+            alternativaB: "Anos 70",
+            alternativaC: "Anos 80 e 90",
+            alternativaD: "Anos 2000",
+            alternativaE: "Anos 2010",
+            alternativaCorreta: "alternativaC",
+            tema: "História"
+        },
+
+        {
+            pergunta: "Assinale a alternativa que completa o nome das duplas respectivamente: Bruno e _____, Munhoz e _____, _____ e Juliano , Guilherme e _____.",
+            alternativaA: "Mariano, Vinícios, Marcelo e Santiago",
+            alternativaB: "Vinícios, Marcelo, Mariano e Santiago",
+            alternativaC: "Marrone, Santiago, Juliano e Vinícios",
+            alternativaD: "Santiago, Mariano, Vinícios e Juliano",
+            alternativaE: "Marrone, Mariano, Juliano, Santiago",
+            alternativaCorreta: "alternativaE",
+            tema: "Curiosidades"
+        },
+
+        {
+            pergunta: "Quem ficou conhecido como o 'Embaixador' do sertanejo?",
+            alternativaA: "Luan Santana",
+            alternativaB: "Gusttavo Lima",
+            alternativaC: "Leonardo",
+            alternativaD: "Daniel",
+            alternativaE: "Michel Teló",
+            alternativaCorreta: "alternativaB",
+            tema: "Curiosidades"
+        },
+
+        {
+            pergunta: "O feminejo representa:",
+            alternativaA: "O sertanejo internacional",
+            alternativaB: "A presença feminina no sertanejo",
+            alternativaC: "O sertanejo raiz",
+            alternativaD: "O início da viola caipira",
+            alternativaE: "O crescimento do gênero feminino",
+            alternativaCorreta: "alternativaB",
+            tema: "Curiosidades"
+        },
+
+        {
+            pergunta: "Complete a música: E nessa loucura de dizer que não te quero <br> Vou negando as __________________",
+            alternativaA: "evidências",
+            alternativaB: "aparências",
+            alternativaC: "divergências",
+            alternativaD: "inferências",
+            alternativaE: "consequências",
+            alternativaCorreta: "alternativaB",
+            tema: "Letras"
+        }
+
+    ]
+
+    // variáveis globais    
+    let numeroDaQuestaoAtual = 0
+    let respostasUsuario = []
+
+    let pontuacaoFinal = 0
+    let certas = 0
+    let erradas = 0
+
+    let acertosHistoria = 0
+    let acertosArtistas = 0
+    let acertosCuriosidades = 0
+    let acertosLetras = 0
+
+    let quantidadeDeQuestoes = listaDeQuestoes.length
+
+
+    function onloadEsconder() {
+        document.getElementById('jogo').style.display = "none"
+    }
+
+
+    function iniciarQuiz() {
+        document.getElementById('jogo').style.display = "flex"
+        btnIniciarQuiz.style.display = "none"
+        document.getElementById('introducaoQuiz').style.display = "none"
+        document.getElementById('qtdQuestoes').innerHTML = quantidadeDeQuestoes
+
+        preencherHTMLcomQuestaoAtual(0)
+
+        btnRetornar.disabled = false
+        btnAvancar.disabled = false
+        btnConcluir.disabled = true
+    }
+
+    function preencherHTMLcomQuestaoAtual(index) {
+        habilitarAlternativas(true)
+        const questaoAtual = listaDeQuestoes[index]
+        numeroDaQuestaoAtual = index
+        console.log("questaoAtual")
+        console.log(questaoAtual)
+        document.getElementById("spanNumeroDaQuestaoAtual").innerHTML = Number(index) + 1 // ajustando porque o index começa em 0
+        document.getElementById("spanQuestaoExibida").innerHTML = questaoAtual.pergunta;
+        document.getElementById("labelOpcaoUm").innerHTML = questaoAtual.alternativaA;
+        document.getElementById("labelOpcaoDois").innerHTML = questaoAtual.alternativaB;
+        document.getElementById("labelOpcaoTres").innerHTML = questaoAtual.alternativaC;
+        document.getElementById("labelOpcaoQuatro").innerHTML = questaoAtual.alternativaD;
+        document.getElementById("labelOpcaoCinco").innerHTML = questaoAtual.alternativaE;
+
+    }
+
+    function habilitarAlternativas(trueOrFalse) {
+        let opcaoEscolhida = trueOrFalse ? false : true
+
+        primeiraOpcao.disabled = opcaoEscolhida
+        segundaOpcao.disabled = opcaoEscolhida
+        terceiraOpcao.disabled = opcaoEscolhida
+        quartaOpcao.disabled = opcaoEscolhida
+        quintaOpcao.disabled = opcaoEscolhida
+
+    }
+
+    function desmarcarRadioButtons() {
+        const options = document.getElementsByName("option");
+        for (let i = 0; i < options.length; i++) {
+            options[i].checked = false;
+        }
+    }
+
+
+    function avancar() {
+        // recupera alternativas no html
+        const options = document.getElementsByName("option");
+
+        let hasChecked = false
+
+
+        for (let i = 0; i < options.length; i++) {
+            if (options[i].checked) {
+                hasChecked = true
+                break
+            }
+        }
+
+        if (!hasChecked) {
+            alert("Não há alternativas escolhidas. Escolha uma opção.")
+            return;
+        }
+        salvarResposta()
+        numeroDaQuestaoAtual++
+
+        if (numeroDaQuestaoAtual < quantidadeDeQuestoes - 1) {
+            preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
+
+        } else if (numeroDaQuestaoAtual == quantidadeDeQuestoes - 1) {
+            alert("Atenção... a próxima é a ultima questão!")
+            preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
+            btnAvancar.style.display = "none"
+            btnConcluir.style.display = "block"
+            btnConcluir.disabled = false
+
+        } else {
+            finalizarJogo()
+        }
+
+        desmarcarRadioButtons()
+    }
+
+    function retornar() {
+
+        if (numeroDaQuestaoAtual > 0) {
+
+            numeroDaQuestaoAtual--
+
+            preencherHTMLcomQuestaoAtual(numeroDaQuestaoAtual)
+
+            desmarcarRadioButtons()
+
+            btnAvancar.style.display = "block"
+            btnConcluir.style.display = "none"
+
+        }
+
+    }
+
+    function salvarResposta() {
+
+        const options = document.getElementsByName("option")
+
+        options.forEach((option) => {
+
+            if (option.checked) {
+
+                respostasUsuario[numeroDaQuestaoAtual] = option.value
+
+            }
+
+        })
+    }
+
+
+    function finalizarJogo() {
+        document.getElementById('jogo').style.display = "none"
+        salvarResposta()
+
+        // zera contadores
+        pontuacaoFinal = 0; certas = 0; erradas = 0
+        acertosHistoria = 0; acertosArtistas = 0; acertosCuriosidades = 0; acertosLetras = 0
+
+        for (let i = 0; i < listaDeQuestoes.length; i++) {
+            const questaoAtual = listaDeQuestoes[i]
+            if (respostasUsuario[i] && respostasUsuario[i] == questaoAtual.alternativaCorreta) {
+                pontuacaoFinal++; certas++
+                if (questaoAtual.tema == "História") acertosHistoria++
+                else if (questaoAtual.tema == "Artistas") acertosArtistas++
+                else if (questaoAtual.tema == "Curiosidades") acertosCuriosidades++
+                else if (questaoAtual.tema == "Letras") acertosLetras++
+            } else {
+                erradas++
+            }
+        }
+
+        let porcentagem = (pontuacaoFinal / listaDeQuestoes.length) * 100
+
+        // salva no sessionStorage para a dashboard consumir
+        sessionStorage.setItem("PONTUACAO", pontuacaoFinal)
+        sessionStorage.setItem("CERTAS", certas)
+        sessionStorage.setItem("ERRADAS", erradas)
+        sessionStorage.setItem("PORCENTAGEM", porcentagem.toFixed(0))
+        sessionStorage.setItem("ARTISTAS", acertosArtistas)
+        sessionStorage.setItem("HISTORIA", acertosHistoria)
+        sessionStorage.setItem("LETRAS", acertosLetras)
+        sessionStorage.setItem("CURIOSIDADES", acertosCuriosidades)
+
+        // envia pro backend
+        fetch("/quiz/salvarResultado", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                acertosServer: certas,
+                errosServer: erradas,
+                porcentagemServer: porcentagem.toFixed(0),
+                idUsuarioServer: sessionStorage.ID_USUARIO,
+                acertosHistoriaServer: acertosHistoria,
+                acertosArtistasServer: acertosArtistas,
+                acertosCuriosidadesServer: acertosCuriosidades,
+                acertosLetrasServer: acertosLetras
+            })
+        })
+            .then((resposta) => {
+                if (resposta.ok) {
+                    window.location.href = "dashboard/dashboard.html"
+                } else {
+                    alert("Erro ao salvar resultado. Tente novamente.")
+                    document.getElementById('jogo').style.display = "flex"
+                }
+            })
+            .catch((erro) => {
+                console.log(erro)
+                alert("Erro de conexão. Verifique sua internet e tente novamente.")
+                document.getElementById('jogo').style.display = "flex" 
+            })
+    }
+</script>

@@ -81,7 +81,7 @@
                 </div>
 
                 <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                    <img src="./assets//gifs/aguarde-orange.gif" id="loading-gif">
                 </div>
 
                 <div id="div_erros_login"></div>
@@ -136,10 +136,9 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
-                        window.location = "./dashboard/cards.html";
+                        window.location = "quiz.html";
                     }, 1000); // apenas para exibir o loading
 
                 });

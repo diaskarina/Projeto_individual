@@ -8,12 +8,27 @@ comandos para mysql server
 
 CREATE DATABASE conexaoSertaneja;
 
-USE conexaoSetaneja;
+USE conexaoSertaneja;
 
 CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
+	id_usuario INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
     cpf CHAR(11),
 	email VARCHAR(50),
 	senha VARCHAR(50)
+);
+
+CREATE TABLE resultado_quiz (
+	id_resultado INT PRIMARY KEY AUTO_INCREMENT,
+	acertos INT,
+	erros INT,
+	porcentagem INT,
+	acertos_historia INT,
+	acertos_artistas INT,
+	acertos_curiosidades INT,
+	acertos_letras INT,
+	fk_usuario INT,
+	CONSTRAINT fkResultadoUsuario
+	FOREIGN KEY (fk_usuario)
+	REFERENCES usuario(id_usuario)
 );
