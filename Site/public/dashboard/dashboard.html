@@ -27,9 +27,7 @@
     <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
-<!-- <body onload=" atualizarFeed()"> -->
-
-<body>
+<body onload="iniciarDashboard()">
 
     <div class="janela">
         <div class="header-left">
@@ -38,18 +36,10 @@
             </div>
 
             <div class="btn-nav-white">
-                <a href="./cards.html">
-                    <h3>Aquários</h3>
+                <a href="../quiz.html">
+                    <img src="../assets/imgs/buttonTente.png" alt="">
+                    <h3>Tente novamente</h3>
                 </a>
-            </div>
-
-            <div class="btn-nav">
-
-                <h3>Gráficos</h3>
-
-            </div>
-
-            <div class="btn-nav-white">
                 <a href="./mural.html">
                     <img src="../assets/imgs/chat.png" alt="">
                     <h3>Suporte</h3>
@@ -69,12 +59,27 @@
                 <span id="b_usuario">usuário!</span>
                 <span id="b_cpf">cpf</span>
             </div>
-            
-            <div id="alerta">
-            </div>
 
-            <div class="container">
-                <p>musica</p>
+
+            <div class="container-kpi">
+                <div class="kpi-info">
+                    <div class="kpi-acertos">
+                        <span>Acertos</span>
+                        <strong id="kpiAcertos"></strong>
+                    </div>
+                    <div class="kpi-erros">
+                        <span>Erros</span>
+                        <strong id="kpiErros"></strong>
+                    </div>
+                    <div class="kpi-porcentagem">
+                        <span>Aproveitamento</span>
+                        <strong id="kpiPorcentagem"></strong>
+                    </div>
+                </div>
+
+                <div class="kpi-imagem">
+                    <img id="imgPessoa" src="" alt="">
+                </div>
             </div>
 
             <div class="btns-dash" id="btnAquario">
@@ -94,6 +99,30 @@
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
     b_cpf.innerHTML = sessionStorage.CPF_USUARIO;
 
+
+    function iniciarDashboard() {
+        carregarKPI()
+        // carregarGraficoTemas()   <- vai descomentar quando criar
+        // carregarGraficoPizza()   <- vai descomentar quando criar
+    }
+
+    function carregarKPI() {
+        var acertos = sessionStorage.getItem("CERTAS")
+        var erros = sessionStorage.getItem("ERRADAS")
+        var porcentagem = sessionStorage.getItem("PORCENTAGEM")
+
+        document.getElementById("kpiAcertos").innerHTML = acertos
+        document.getElementById("kpiErros").innerHTML = erros
+        document.getElementById("kpiPorcentagem").innerHTML = porcentagem + "%"
+
+        var imgPessoa = document.getElementById("imgPessoa")
+        if (acertos >= 5) {
+            imgPessoa.src = "../assets/imgs/pessoa_feliz.png"  
+        } else {
+            imgPessoa.src = "../assets/imgs/pessoa_triste.png" 
+    
+    }
+}
     let proximaAtualizacao;
 
     window.onload = exibirAquariosDoUsuario();

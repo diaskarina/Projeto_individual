@@ -122,9 +122,19 @@ body {
     width: 30px;
 }
 
-.dash-geral .container{
+.dash-geral .container-kpi{
     background-color: #a65927;
     width: 700px;
     height: 200px;
     border-radius: 20px;
+}
+
+.kpi-imagem{
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.kpi-imagem img{
+    width: 350px;
+    height: auto;
 }

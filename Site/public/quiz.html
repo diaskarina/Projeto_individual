@@ -6,22 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conexão Sertaneja | Quiz</title>
     <link rel="stylesheet" href="css/quiz.css">
+    <script src="./js/sessao.js"></script>
+    <link rel="icon" href="./assets/icon/Logo.ico">
+    <link href="https://fonts.cdnfonts.com/css/angelica-rytes" rel="stylesheet">
+    <link rel="icon" href="./assets/icon/Logo.ico">
+    <link href="https://fonts.cdnfonts.com/css/angelica-rytes" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Medula+One&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body onload="onloadEsconder()">
-    <div id="pontuacaoEJogo">
-        <div id="introducaoQuiz">
-            <p>
-                Descubra o quanto você sabe sobre o universo sertanejo!
-                Responda às perguntas e acompanhe seu desempenho completo na dashboard.
-            </p>
-
-            <button id="btnIniciarQuiz" onclick="iniciarQuiz()">
-                INICIAR QUIZ
-            </button>
+    <div class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="assets/icon/Logo2.png" alt=""></a>
+            </div>
+            <ul class="navbar">
+                <li class="agora">
+                    <a href="index.html" id="sair" onclick="clicarSair(event)">Sair</a>
+                </li>
         </div>
-        <div id="msgFinal"></div>
+    </div>
 
+    <div id="introducaoQuiz">
+        <p>
+            Descubra o quanto você sabe sobre o universo sertanejo!
+            Responda às perguntas e acompanhe seu desempenho completo na dashboard.
+        </p>
+
+        <button id="btnIniciarQuiz" onclick="iniciarQuiz()">
+            INICIAR QUIZ
+        </button>
+    </div>
+
+    <div id="pontuacaoEJogo">
         <div id="jogo" class="width-fit-content flex-colunar border-secondary">
 
             <div id="infoQuestao" class="padding-8">
@@ -74,6 +95,18 @@
 
 </html>
 <script>
+    //function clicarSair() {
+       // let sair = sair.value;
+        //alert('Se sair, as alterações não ficaram salvas')
+    //}
+
+    function clicarSair(event) {
+    event.preventDefault(); // impede que o link vá direto para index.html
+    alert('Se sair, as alterações não ficarão salvas');// se quiser redirecionar depois do alerta:
+    window.location.href = "index.html";
+}
+
+
 
     const listaDeQuestoes = [
 
@@ -388,7 +421,7 @@
             .catch((erro) => {
                 console.log(erro)
                 alert("Erro de conexão. Verifique sua internet e tente novamente.")
-                document.getElementById('jogo').style.display = "flex" 
+                document.getElementById('jogo').style.display = "flex"
             })
     }
 </script>
