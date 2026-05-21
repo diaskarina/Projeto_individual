@@ -12,7 +12,7 @@ function salvarResultado(acertos, erros, porcentagem, idUsuario,
         (${acertos}, ${erros}, ${porcentagem}, ${idUsuario},
          ${acertosHistoria}, ${acertosArtistas}, ${acertosCuriosidades}, ${acertosLetras});`;
 
-    console.log("Executando a instrução SQL: \n" + instrucaoSql); // ✅ adicionar
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
 
