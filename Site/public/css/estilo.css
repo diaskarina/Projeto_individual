@@ -248,8 +248,7 @@ body {
 .box img {
   width: 200px;
   height: 200px;
-  object-fit: cover;
-  /* ajusta sem distorcer */
+  object-fit: cover; /* ajusta sem distorcer */
 }
 
 
@@ -356,7 +355,7 @@ body {
 .footer .copyright {
   margin-top: 15px;
   text-align: center;
-  font-size: 15px;
+  font-size: 20px;
   color: #aaa;
 }
 
