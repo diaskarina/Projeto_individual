@@ -24,9 +24,10 @@ body {
     border-radius: 30px;
     width: 100%;
     padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
     /* 👈 efeito card */
 }
+
 
 
 .janela {
@@ -52,17 +53,13 @@ body {
 }
 
 
-.header-left h1 {
-    color: #32b9cd;
-}
-
 .hello {
-  display: flex;
-  align-items: center;
-  justify-content:flex-end;
-  list-style: none;
-  color: #e3b062;
-  gap: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    list-style: none;
+    color: #e3b062;
+    gap: 5px;
 }
 
 .hello h3 {
@@ -75,21 +72,15 @@ body {
     font-weight: 800;
 }
 
-.hello img{
+.hello img {
     width: 50px;
 }
 
-.btn-nav {
-    width: 40%;
-    color: white;
-    background-color: #e6005a;
-    border-radius: 5px;
-    text-align: center;
-    padding: 2% 5%;
+.btn-nav-white {
+    margin-top: 400px;
 }
 
-
-.btn-nav-white a{
+.btn-nav-white a {
     color: #4d1f01;
     text-align: center;
     cursor: pointer;
@@ -99,7 +90,7 @@ body {
     text-decoration: none;
 }
 
-.btn-nav-white img{
+.btn-nav-white img {
     width: 30px;
 }
 
@@ -122,19 +113,97 @@ body {
     width: 30px;
 }
 
-.dash-geral .container-kpi{
+.kpis .container-kpi {
     background-color: #a65927;
-    width: 700px;
+    width: 600px;
     height: 200px;
     border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-.kpi-imagem{
+.kpis .container-kpi2 {
+    background-color: #a65927;
+    width: 300px;
+    height: 200px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+}
+
+.kpi-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 15px;
+    color: white;
+}
+
+.kpi-acertos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.kpi-erros {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.kpi-info span {
+    font-family: 'Poppins', sans-serif;
+    font-size: 32px;
+}
+
+.kpi-info strong {
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+}
+
+#kpi-tentativas {
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+}
+
+
+.linha {
+    width: 50vh;
+    height: 2px;
+    margin: 5px 0;
+    align-self: flex-start;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.dash-geral .kpis {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin: 10px 0px;
+}
+
+
+.kpi-imagem {
     display: flex;
     justify-content: end;
     align-items: end;
 }
-.kpi-imagem img{
-    width: 350px;
+
+.kpi-imagem img {
+    width: 300px;
     height: auto;
+}
+
+.graficos {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-top: 30px;
 }
