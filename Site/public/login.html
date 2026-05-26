@@ -31,20 +31,8 @@
                 <a href="index.html"><img src="assets/icon/Logo.png" alt=""></a>
             </div>
             <ul class="navbar">
-                <li>
-                    <a href="index.html">Inicial</a>
-                </li>
-                <li>
-                    <a href="simulador.html">Simulador</a>
-                </li>
-                <li>
-                    <img src="assets/imgs/usuario.png" alt="" width="40px" height="auto">
-                </li>
-                <li class="agora">
-                    <a href="login.html">Login</a>
-                </li>
-                <li>|</li>
-                <li>
+                <li class="area-user">
+                    <img src="assets/imgs/usuario.png" alt="">
                     <a href="cadastro.html">Cadastro</a>
                 </li>
             </ul>
@@ -59,8 +47,8 @@
             </div>
         </div>
         <div class="container">
-              <h2>Olá de volta!</h2>
-                <div class="shape-login"></div>
+            <h2>Faça seu login</h2>
+            <div class="shape-login"></div>
             <div class="card card-login">
                 <div class="formulario">
                     <div class="campo">
@@ -81,7 +69,7 @@
                 </div>
 
                 <div id="div_aguardar" class="loading-div">
-                    <img src="./assets//gifs/aguarde-orange.gif" id="loading-gif">
+                    <img src="./assets/gifs/aguarde-orange.gif" id="loading-gif">
                 </div>
 
                 <div id="div_erros_login"></div>
@@ -136,7 +124,7 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.CPF_USUARIO =  json.cpf
+                    sessionStorage.CPF_USUARIO = json.cpf
 
                     setTimeout(function () {
                         window.location = "quiz.html";

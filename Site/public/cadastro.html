@@ -28,21 +28,9 @@
         <a href="index.html"><img src="assets/icon/Logo.png" alt=""></a>
       </div>
       <ul class="navbar">
-        <li>
-          <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>
-          <img src="assets/imgs/usuario.png" alt="" width="40px" height="auto">
-        </li>
-        <li>
+        <li class="area-user">
+          <img src="assets/imgs/usuario.png" alt="">
           <a href="login.html">Login</a>
-        </li>
-        <li>|</li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
         </li>
       </ul>
     </div>
@@ -56,14 +44,10 @@
       </div>
     </div>
     <div class="container">
-      <h2>Cadastre-se</h2>
+      <h2>Faça seu Cadastro</h2>
       <div class="shape-cadastro"></div>
       <div class="card card-cadastro">
         <div class="formulario">
-          <!--
-                         Para inserir mais um campo, copie uma das inputs abaixo.
-                         Assim que inserir vá para o script abaixo.
-                     -->
           <div class="campo">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
@@ -91,7 +75,7 @@
           <div id="div_mensagem"></div>
         </div>
         <div id="div_aguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif" />
+          <img src="./assets/gifs/aguarde-orange.gif" id="loading-gif" />
         </div>
 
         <div id="div_erros_login"></div>
@@ -109,7 +93,7 @@
   // let listaEmpresasCadastradas = [];
 
   function cadastrar() {
-    //aguardar();
+    aguardar();
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
