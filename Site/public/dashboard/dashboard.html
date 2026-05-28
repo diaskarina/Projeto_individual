@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conexão Sertaneja | Dashboard</title>
-    <link rel="stylesheet" href="../css/geral.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
     <script src="../js/sessao.js"></script>
-    <script src="./../js/alerta.js"></script>
     <link rel="icon" href="../assets/icon/Logo.ico">
     <link href="https://fonts.cdnfonts.com/css/angelica-rytes" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,8 +19,6 @@
     <!-- scripts do Chart.js - 2022-1 -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!--FONT AWESOME-->
-    <script src="https://kit.fontawesome.com/9f7414eb10.js" crossorigin="anonymous"></script>
 </head>
 
 <body onload="iniciarDashboard()">
@@ -29,7 +26,7 @@
     <div class="janela">
         <div class="header-left">
             <div class="logo">
-                <a href="index.html"><img src="../assets/icon/Logo2.png" alt=""></a>
+                <img src="../assets/icon/Logo2.png" alt="">
             </div>
 
             <div class="btn-nav-white">
@@ -37,10 +34,6 @@
                     <img src="../assets/imgs/buttonTente.png" alt="">
                     <h3>Tente novamente</h3>
                 </a>
-                <!-- <a href="./mural.html">
-                    <img src="../assets/imgs/chat.png" alt="">
-                    <h3>Suporte</h3>
-                </a>-->
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
@@ -71,11 +64,6 @@
                             <strong id="kpiErros"></strong>
                             <span>Erros</span>
                         </div>
-                        <!-- <div class="linha"></div>
-                        <div class="kpi-porcentagem">
-                            <strong id="kpiPorcentagem"></strong>
-                            <span>Aproveitamento</span>
-                        </div> -->
                     </div>
 
                     <div class="kpi-imagem">
@@ -124,11 +112,9 @@
     function carregarKPI() {
         var acertos = sessionStorage.getItem("CERTAS")
         var erros = sessionStorage.getItem("ERRADAS")
-        //var porcentagem = sessionStorage.getItem("PORCENTAGEM")
 
         document.getElementById("kpiAcertos").innerHTML = acertos
         document.getElementById("kpiErros").innerHTML = erros
-        //document.getElementById("kpiPorcentagem").innerHTML = porcentagem + "%"
 
         var imgPessoa = document.getElementById("imgPessoa")
         if (acertos >= 5) {
@@ -142,18 +128,7 @@
     // Função chamada ao carregar a página para obter e processar os dados
     //function obterDados() {
     // Aqui seria a função que obteria os dados do banco de dados
-    // No caso, aqui você colocaria o fetch que teria o endereço da sua rota que você criou na pasta /routes e chamaria a função plotarGraficoLinha nessa função. Exemplo:
-    // fetch('/obterDados')
-    // .then(function(response){
-    //   return response.json();
-    // })
-    // .then(function(data){
-    //   plotarGraficoLinha(data);
-    //   plotarGraficoBarra(data);
-    // })
-    // .catch(function(err){
-    //   console.log(err);
-    // })
+    // No caso, aqui você colocaria o fetch que teria o endereço da sua rota que você criou na pasta /routes e chamaria a função plotarGraficoLinha nessa função. 
 
     function obterDadosGrafico(idUsuario) {
         fetch(`/quiz/usuario/${idUsuario}`, { cache: 'no-store' })
@@ -174,76 +149,9 @@
             });
     }
 
-
-    // Como eu não configurei as rotas, eu criei um array com os dados para simular a obtenção dos dados
-    // var dados = [{
-    //     jogador: 'Endrick',
-    //     votos: 10
-    // },
-    // {
-    //     jogador: 'João',
-    //     votos: 5
-    // },
-    // {
-    //     jogador: 'Maria',
-    //     votos: 15
-    // },
-    // {
-    //     jogador: 'José',
-    //     votos: 20
-    // },
-    // {
-    //     jogador: 'Pedro',
-    //     votos: 25
-    // },
-    // {
-    //     jogador: 'Ana',
-    //     votos: 30
-    // }]
-
-    // Chamando a função para plotar o gráfico de linha com os dados
-    //plotarGraficoLinha(dados);
-    // Chamando a função para plotar o gráfico de barra com os dados
-    //plotarGraficoBarra(dados);
-
-    // // Função para plotar o gráfico de linha
-    // function plotarGraficoLinha(dados) {
-
-    //     // Separando os rótulos (labels) e os dados dos votos
-    //     var votos = [];
-    //     var jogadores = [];
-
-    //     // Preenchendo os arrays com os dados
-    //     for (var i = 0; i < dados.length; i++) {
-    //         votos.push(dados[i].votos);
-    //         jogadores.push(dados[i].jogador);
-    //     }
-
-    //     // Capturando o elemento canvas pelo id 
-    //     var ctx = document.getElementById('linha').getContext('2d');
-    //     // Criando o gráfico de linha usando o Chart.js
-    //     var myChart = new Chart(ctx, {
-    //         type: 'line', // Tipo de gráfico: linha
-    //         data: { // Dados para o gráfico
-    //             labels: jogadores, // Rótulos no eixo X
-    //             datasets: [{
-    //                 label: 'Votos', // Nome do conjunto de dados
-    //                 data: votos, // Dados dos votos
-    //                 backgroundColor: [
-    //                     'rgba(255, 99, 132, 0.2)', // Cor de fundo das linhas
-    //                 ],
-    //                 borderColor: [
-    //                     'rgba(255, 99, 132, 1)', // Cor da borda das linhas
-    //                 ],
-    //                 borderWidth: 1 // Largura da borda das linhas
-    //             }]
-    //         },
-    //     });
-    // }
     // Esta função *plotarGrafico* usa os dados capturados na função anterior para criar o gráfico
     // Configura o gráfico (cores, tipo, etc), materializa-o na página e, 
-    // A função *plotarGrafico* também invoca a função *atualizarGrafico*
-    // Função para plotar o gráfico de barra
+
     function plotarGraficoBarra(dados) {
         console.log('iniciando plotagem do gráfico...');
 
@@ -260,10 +168,10 @@
                     dados.acertos_letras
                 ],
                 backgroundColor: [
-                    'rgba(245, 197, 24, 0.6)',   // Amarelo - Artistas
-                    'rgba(230, 0, 90, 0.6)',     // Rosa - Curiosidades
-                    'rgba(227, 176, 98, 0.6)',   // Dourado - História
-                    'rgba(242, 217, 176, 0.6)'  // Bege - Letras
+                    'rgba(245, 197, 24, 0.6)',  
+                    'rgba(230, 0, 90, 0.6)',    
+                    'rgba(227, 176, 98, 0.6)',  
+                    'rgba(242, 217, 176, 0.6)'  
                 ],
                 borderColor: [
                     'rgb(245, 197, 24)',
@@ -285,7 +193,7 @@
                         text: 'Acertos por Tema',
                         color: '#ffffff',
                         font: {
-                            size: 20  // ✅ título
+                            size: 20  
                         }
                     },
                     legend: {
@@ -298,7 +206,7 @@
                         ticks: {
                             color: '#ffffff',
                             font: {
-                                size: 14  // ✅ números do eixo X
+                                size: 14 
                             }
                         }
                     },
@@ -308,14 +216,14 @@
                         ticks: {
                             color: '#ffffff',
                             font: {
-                                size: 16  // ✅ labels do eixo Y (Artistas, Curiosidades...)
+                                size: 16 
                             },
                         }
                     }
                 }
             }
         };
-        // ✅ adiciona isso antes de fechar a função
+
         new Chart(document.getElementById('myChartBar'), config)
     }
     function plotarGraficoDoughnut(dados) {
@@ -331,8 +239,8 @@
                 datasets: [{
                     data: [porcentagem, restante],
                     backgroundColor: [
-                        'rgba(245, 197, 24, 0.8)',   // Amarelo - Aproveitamento
-                        'rgba(230, 0, 90, 0.3)'     // Rosa - Restante
+                        'rgba(245, 197, 24, 0.8)',   
+                        'rgba(230, 0, 90, 0.3)'    
                     ],
                     borderColor: [
                         'rgb(245, 197, 24)',
@@ -355,7 +263,7 @@
                     legend: {
                         display: true,
                         labels: {
-                            color: '#ffffff',  // ✅ cor da legenda
+                            color: '#ffffff',  
                             font: {
                                 size: 14
                             }
@@ -378,10 +286,4 @@
                 }]
             });
     }
-
-
-
-
-
-
 </script>

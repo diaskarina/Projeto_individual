@@ -23,10 +23,6 @@
             <div class="logo">
                 <a href="index.html"><img src="assets/icon/Logo2.png" alt=""></a>
             </div>
-            <ul class="navbar">
-                <li class="agora">
-                    <a href="index.html" id="sair" onclick="clicarSair(event)">Sair</a>
-                </li>
         </div>
     </div>
 
@@ -94,19 +90,6 @@
 
 </html>
 <script>
-    //function clicarSair() {
-       // let sair = sair.value;
-        //alert('Se sair, as alterações não ficaram salvas')
-    //}
-
-    function clicarSair(event) {
-    event.preventDefault(); // impede que o link vá direto para index.html
-    alert('Se sair, as alterações não ficarão salvas');// se quiser redirecionar depois do alerta:
-    window.location.href = "index.html";
-}
-
-
-
     const listaDeQuestoes = [
 
         {
@@ -366,8 +349,13 @@
         salvarResposta()
 
         // zera contadores
-        pontuacaoFinal = 0; certas = 0; erradas = 0
-        acertosHistoria = 0; acertosArtistas = 0; acertosCuriosidades = 0; acertosLetras = 0
+        pontuacaoFinal = 0; 
+        certas = 0; 
+        erradas = 0
+        acertosHistoria = 0; 
+        acertosArtistas = 0; 
+        acertosCuriosidades = 0; 
+        acertosLetras = 0
 
         for (let i = 0; i < listaDeQuestoes.length; i++) {
             const questaoAtual = listaDeQuestoes[i]
@@ -384,7 +372,7 @@
 
         let porcentagem = (pontuacaoFinal / listaDeQuestoes.length) * 100
 
-        // salva no sessionStorage para a dashboard consumir
+        // salva no sessionStorage para a dashboard 
         sessionStorage.setItem("PONTUACAO", pontuacaoFinal)
         sessionStorage.setItem("CERTAS", certas)
         sessionStorage.setItem("ERRADAS", erradas)

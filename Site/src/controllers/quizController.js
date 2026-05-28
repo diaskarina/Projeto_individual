@@ -2,10 +2,10 @@ var quizModel = require("../models/quizModel");
 
 function salvarResultado(req, res) {
 
-   var acertos = req.body.acertosServer;           
-    var erros = req.body.errosServer;               
-    var porcentagem = req.body.porcentagemServer;  
-    var idUsuario = req.body.idUsuarioServer; 
+    var acertos = req.body.acertosServer;
+    var erros = req.body.errosServer;
+    var porcentagem = req.body.porcentagemServer;
+    var idUsuario = req.body.idUsuarioServer;
     var acertosHistoria = req.body.acertosHistoriaServer;
     var acertosArtistas = req.body.acertosArtistasServer;
     var acertosCuriosidades = req.body.acertosCuriosidadesServer;
