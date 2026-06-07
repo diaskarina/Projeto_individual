@@ -24,15 +24,11 @@ body {
     border-radius: 30px;
     width: 100%;
     padding: 30px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-    /* 👈 efeito card */
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3); /* efeito card */
 }
-
-
 
 .janela {
     display: flex;
-    /* width: 100vw; */
 }
 
 .header-left a {
@@ -50,6 +46,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+ p{
+    font-size: 20px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+.topo{
+    display: flex;
+    justify-content: space-between;
+    margin-top: -10px;
 }
 
 
